@@ -6,8 +6,8 @@ version := "0.0.1"
 
 scalaVersion := "2.11.12"
 
-//libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.4" % "provided"
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.4"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.4" % "provided"
+//libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.4"
 
 libraryDependencies += "mrpowers" % "spark-daria" % "0.35.2-s_2.11"
 
@@ -27,3 +27,8 @@ testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
 
 // Add the JAR file naming conventions described here: https://github.com/MrPowers/spark-style-guide#jar-files
 // You can add the JAR file naming conventions by running the shell script
+
+//assemblyMergeStrategy in assembly := {
+//  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}
